@@ -10,7 +10,7 @@ class CategoryController extends \BaseController {
 	 */
 	public function index()
 	{
-		//
+		return View::make('admin.categories.index');
 	}
 
 	/**

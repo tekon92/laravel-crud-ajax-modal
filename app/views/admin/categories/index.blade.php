@@ -34,15 +34,15 @@
 	</div>
 <br />
 </div><!--/.content-->
-<a class="btn-box small span2" href="#" data-toggle="modal" data-target="#createCategory" >
+<a class="btn-box small span2" href="#" data-toggle="modal" data-target="#createEvent" >
 	<i class="icon-ambulance"></i>
 	<b>Add New</b>
 </a>
 
 {{-- modal --}}
-@include('admin.events.create')
-@include('admin.events.edit')
-@include('admin.events.delete')
-@include('admin.events.show')
+@include('admin.categories.create')
+@include('admin.categories.edit')
+@include('admin.categories.delete')
+@include('admin.categories.show')
 {{-- end-modal --}}
 @stop

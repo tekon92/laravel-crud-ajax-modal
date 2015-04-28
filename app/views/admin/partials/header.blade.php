@@ -10,4 +10,6 @@
     <link type="text/css" href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,400,600'
         rel='stylesheet'>
     <link rel="stylesheet" href="{{ URL::asset('packages/css/style.css')}}">
+
+    <script src="{{ URL::asset('packages/scripts/jquery-1.9.1.min.js')}}" type="text/javascript"></script>
 </head>
