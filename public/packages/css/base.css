@@ -1,0 +1,248 @@
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #f2f2f2;
+    color: #777777;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-size: large;
+    text-rendering: optimizeLegibility;
+    font-feature-settings: "kern";
+    -webkit-font-feature-settings: "kern";
+    -moz-font-feature-settings: "kern";
+    -moz-font-feature-settings: "kern=1";
+
+}
+
+*::selection {
+    color: #ffffff;
+    background: #d91d15;
+}
+
+*:focus {
+    outline: 0;
+}
+
+*::-moz-selection {
+    color: #ffffff;
+    background: #d91d15;
+}
+
+header#header {
+    background-color: #d91d15;
+    border-bottom: 5px solid #a3130c;
+    color: white;
+    padding: 0.4em 0;
+}
+
+header#header div#app-name {
+    color: white;
+    cursor: default;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-size: xx-large;
+    margin: auto;
+    position: relative;
+    text-align: center;
+}
+
+header#header div#headerInner span#app-desc {
+    display: inline-block;
+    font-size: small;
+    margin-left: 1em;
+}
+
+div.content {
+    margin: 0 auto;
+    max-width: 768px;
+    padding: 1em;
+    position: relative;
+}
+
+ul.main-list {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+ul.main-list li {
+    transition: opacity 0.2s linear;
+    -webkit-transition: opacity 0.2s linear;
+}
+
+ul.main-list li.inactive {
+    opacity: 0.5;
+}
+
+.link-block {
+    background-color: #ffffff;
+    background-position: 0px 0px;
+    background-repeat: no-repeat;
+    background-size: 100px 100px;
+    border: none;
+    border-bottom: 3px solid #eeeeee;
+    border-radius: 2px;
+    display: block;
+    margin: 0.05em 0;
+    overflow: hidden;
+    padding: 1em;
+    position: relative;
+}
+
+.link-block input,
+.link-block textarea {
+    border: none;
+    color: #888888;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-size: large;
+    resize: none;
+    text-align: center;
+    width: 100%;
+}
+
+.link-block a {
+    display: block;
+    height: auto;
+    text-decoration: none;
+}
+
+.link-block div.data-wrapper {
+    display: block;
+    vertical-align: top;
+}
+
+.link-block div {
+    color: #222222;
+    text-align: center;
+}
+
+.quote::before {
+    content: attr(data-ldquo);
+    color: #cccccc;
+    font-size: xx-large;
+}
+
+.quote::after {
+    content: attr(data-rdquo);
+    color: #cccccc;
+    font-size: xx-large;
+}
+
+.quote {
+    font-size: x-large;
+}
+
+.link-block div.author {
+    color: #888888;
+    font-size: small;
+}
+
+.link-block div.domain {
+    color: #cccccc;
+    font-size: small;
+}
+
+.link-block img {
+    background: #fafafa;
+    border-bottom-left-radius: 2px;
+    border-top-left-radius: 2px;
+}
+
+div#loading-msg {
+    text-align: center;
+}
+
+div#loading-msg p#loading-text {
+    color: #bdbdbd;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-size: x-large;
+}
+
+div#loading-msg img#loading {
+    -webkit-animation:spin 1.4s linear infinite;
+    -moz-animation:spin 1.4s linear infinite;
+    animation:spin 1.4s linear infinite;
+}
+
+div.modal-hide {
+    top: -100%;
+}
+
+div.modal-show {
+    top: 0;
+}
+
+div.visible-m,
+div.visible-t,
+div.visible-d {
+    display: none;
+    height: 0;
+    margin: 0;
+    padding: 0;
+    width: 0;
+}
+
+.footer {
+    position: absolute;
+    color: #bdbdbd;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding-bottom: 1em;
+    text-align: center;
+}
+
+.pull-right {
+    position: absolute;
+    right: 1em;
+}
+
+.pull-left {
+    position: absolute;
+    left: 1em;
+}
+
+.header-btn {
+    background-color: transparent;
+    border: none;
+    color: #ffffff;
+    font-size: large;
+    line-height: 2em;
+    cursor: pointer;
+}
+
+.fullScreen {
+    position: fixed;
+    top: 0; bottom: 0;
+    left: 0; right: 0;
+}
+
+.fullScreen-bg {
+    background-position: center center;
+    background-size: cover;
+}
+
+.centerQuote {
+    background-color: rgba(0,0,0,0.5);
+    color: #ffffff;
+    padding: 1em;
+    text-align: center;
+
+
+    position: absolute;
+    top: 50%;
+    left: 0; right: 0;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+
+.centerQuote h1 {
+    font-size: xx-large;
+}
+
+em.author {
+    font-family: serif;
+    font-size: large;
+}

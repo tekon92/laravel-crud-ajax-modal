@@ -11,6 +11,7 @@
 <script src="{{ URL::asset('packages/scripts/flot/jquery.flot.resize.js')}}" type="text/javascript"></script>
 <script src="{{ URL::asset('packages/scripts/datatables/jquery.dataTables.js')}}" type="text/javascript"></script>
 <script src="{{ URL::asset('packages/scripts/common.js')}}" type="text/javascript"></script>
+<script src="{{ URL::asset('packages/scripts/angular.min.js')}}"></script>
 
 <script>
 $('#category_form').submit(function(){
@@ -40,8 +41,14 @@ $('#category_form').submit(function(){
 	return false;
 });
 
+// $('#update_event').submit(function(){
+//     var id = 
+//     var url = 
+// })
+var edit_id = null;
 $('.category_edit').on('click', function(){
     var id = $('td:first', $(this).parents('tr')).text();
+    edit_id = id;
     $.get('/edit/'+id, function(response){
         for (var i in response) {
             $('input[name="'+i+'"]').val(response[i]);
@@ -58,28 +65,6 @@ $('.category_show').click(function(){
     }, 'json');
 });
 
-// $('.category_delete').on('click', function(){
-//     var id = $('td:first', $(this).parents('tr')).text();
-//     $.get('/delete/'+id, function(response){
-//         if(!response.success)
-//         {
-//             for(var k in response.msg){
-//                 if(response.msg.hasOwnProperty(k)){
-//                     response.msg[k].forEach(function(val){
-//                         info.find('ul').append('<li>' + val + '</li>'); 
-//                     });
-                    
-//                 }
-//             }
-
-//             info.slideDown();
-//         }
-//         else if(response.success){
-//           window.location = "{{ URL::route('category.index')}}";
-//         }
-//     },'json');
-// });
-
 $('.delete-event').click(function(evnt) {
             var href = $(this).attr('href');
             var message = $(this).attr('data-content');
@@ -94,8 +79,28 @@ $('.delete-event').click(function(evnt) {
             $('#dataConfirmOK').attr('href', href);
             $('#dataConfirmModal').modal({show:true});
 });
-// 
-// $('#confirm-delete').on('click', function(e) {
-//     $(this).find('.btn-ok').attr('href', $(e.relatedTarget).data('href'));
-// });
+
+$('#updateButton').click(function(){
+        var name = $('#edit_form').find('input[name=name]').val();
+        var token = $('meta[name="csrf-token"]').attr('content');
+        var id = edit_id;
+        var URL = "/update/"+id;
+
+        var formdata = {
+            'name' : name,
+            '_token' : token
+        };
+
+        $.ajax({
+            url: URL,
+            type: 'PUT',    
+            data: formdata,
+            dataType: 'json',
+            success: function(result) {
+                window.location = "{{ URL::route('category.index')}}";
+            }
+        });
+});
+
+
 </script>

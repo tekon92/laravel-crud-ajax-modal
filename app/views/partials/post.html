@@ -1,0 +1,22 @@
+<header id="header">
+  <div id="app-name">
+    <span class="header-btn pull-left" ui-sref="main">Back</span>
+    Quote
+    <span class="header-btn pull-right" ng-click="post()">Submit</span>
+  </div>
+</header>
+
+<div class="content">
+  <div class="link-block">
+    <input type="text" ng-model="quote.quote" placeholder="QUOTE" ng-keyup="$event.keyCode == 13 && find();" class="msd-elastic" ng-disabled="disabled" />
+  </div>
+
+  <div class="link-block">
+    <input type="text" ng-model="quote.author" placeholder="BY" ng-keyup="$event.keyCode == 13 && find();" class="ng-pristine ng-valid ng-touched" ng-disabled="disabled">
+  </div>
+
+  <div class="link-block">
+    <input type="text" ng-model="quote.image" placeholder="BACKDROP" ng-keyup="$event.keyCode == 13 && find();" class="ng-pristine ng-valid ng-touched" ng-disabled="disabled">
+  </div>
+  <div class="clearfix"></div>
+</div>

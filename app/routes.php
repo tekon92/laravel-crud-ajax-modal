@@ -22,5 +22,24 @@ Route::post('create', ['uses' => 'EventController@create', 'as' => 'category.cre
 Route::get('/show/{id}', ['uses' => 'EventController@show', 'as' => 'category.show']);
 Route::get('/edit/{id}', ['uses' => 'EventController@edit', 'as' => 'category.edit']);
 Route::get('/delete/{id}', ['uses' => 'EventController@delete', 'as' => 'category.deletex']);
-Route::patch('update/{id}', ['uses' => 'EventController@update', 'as' => 'category.update']);
-ROute::get('/delete/conf/{id}', ['uses' => 'EventController@destroy', 'as' => 'category.delete']);
+Route::put('/update/{id}', ['uses' => 'EventController@update', 'as' => 'category.update']);
+Route::get('/delete/conf/{id}', ['uses' => 'EventController@destroy', 'as' => 'category.delete']);
+
+
+// Route::resource('category', 'CategoryController');
+
+// Route::resource(
+//     'quote', 
+//     'QuoteController',
+//     ['only' => ['store', 'index']]
+// );
+
+// Route::get('/', function()
+// {
+//     return View::make('app');
+// });
+// Route::resource(
+//     'quote', 
+//     'QuoteController',
+//     ['only' => ['store', 'index', 'show']]
+// );

@@ -1,0 +1,19 @@
+<header id="header">
+  <div id="app-name">
+    Quote
+    <span class="header-btn pull-right" ui-sref="post">Post</span>
+  </div>
+</header>
+
+<ul class="main-list">
+  <li class="link-block animated fadeInUp" ng-repeat="item in pack"  style="-webkit-animation-delay:{{$index%10*0.1}}s; animation-delay:{{$index%10*0.1}}s;" ng-click="goToView(item.id)">
+    <a title="{{item.author}}">
+      <div class="data-wrapper">
+        <div class="quote" data-ldquo="&ldquo;" data-rdquo="&rdquo;">{{item.quote}}</div>
+        <div class="author ng-binding" style="padding-left: 0; margin-top: 0.2em;">{{item.author}}</div>
+      </div>
+    </a>
+  </li>
+</ul>
+
+<div infinite-scroll="fetch()" infinite-scroll-distance="3"></div>
