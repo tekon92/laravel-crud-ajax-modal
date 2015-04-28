@@ -7,11 +7,12 @@
     	{{-- topnav --}}
         @include('admin.partials.topnav')
         {{-- end-topnav --}}
+        @if (Auth::user())
         <div class="wrapper">
             <div class="container">
                 <div class="row">
                     <div class="span3">
-                    	{{-- sidebar --}}
+                        {{-- sidebar --}}
                         @include('admin.partials.sidebar')
                         <!--/.sidebar-->
                     </div>
@@ -27,6 +28,9 @@
             <!--/.container-->
         </div>
         <!--/.wrapper-->
+        @else
+            @include('admin.login')
+        @endif
         @include('admin.partials.footer')
       	{{-- footer --}}
     </body>
