@@ -34,24 +34,7 @@ class EventController extends \BaseController {
 		$validation = Validator::make(Input::all(), $validate);
 		$validation->setAttributeNames(['name' => 'category']);
 
-		// if ($validation->fails()) {
-			
-		// 	return Response::json([
-		// 		'success' => 'false',
-		// 		'errors' => $validation->messages()->toArray()
-		// 		], 400);
-		// } else {
-		// 	$name = new Category;
-		// 	$name->name = Input::get('name');
-		// 	$name->slug = strtolower(preg_replace('/\s+/', '_', $name->name));
-		// 	$name->save();
-
-		// 	return Response::json([
-		// 		'success' => 'true',
-		// 		'msg' => 'completed'
-		// 		], 200);
-		// }
-		// 
+		
 		if ($validation->passes()) {
 			$name = new Category;
 			$name->name = Input::get('name');
@@ -122,7 +105,21 @@ class EventController extends \BaseController {
 	 */
 	public function update($id)
 	{
-		//
+		// if (Session::token() !== Input::get('_token')) {
+		// 	return Response::json(array(
+		// 		'msg' => 'Unathorized'
+		// 	));
+		// }
+		
+		$update = Category::find($id);
+		$update->name = Input::get('name');
+		$update->slug = strtolower(preg_replace('/\s+/', '-', $update->name));
+		$update->save();
+
+		return Response::json([
+			'msg' => 'success',
+			'name' => Input::get('name')
+			]);
 	}
 
 	public function delete($id)
